@@ -29,6 +29,7 @@ class UserController extends Controller
     }
     public function create(Request $request): View
     {
+        $x = 5;
         return View('test', ['data'=>$request->someName] );
     }
     public function getPage(){
