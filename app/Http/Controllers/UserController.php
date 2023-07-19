@@ -29,7 +29,7 @@ class UserController extends Controller
     }
     public function create(Request $request): View
     {
-        $x = 5;
+        $x = 6;
         return View('test', ['data'=>$request->someName] );
     }
     public function getPage(){
