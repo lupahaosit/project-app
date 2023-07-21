@@ -35,9 +35,15 @@ Route::post('message', [UserController::class, 'getPage']);
 Route::get('Create', [UserController::class, 'create'])->name('Create');
 Route::post('Create', [UserController::class, 'create']);
 
+Route::get('Create', [UserController::class, 'create'])->name('Create');
+Route::post('Create', [UserController::class, 'create']);
+
 
 
 
 Route::get('AddStudy', [addStudyPlaceController::class, 'Add_Study'])->name('AddStudy');
 Route::post('AddStudy', [addStudyPlaceController::class, 'Add_Study']);
+
+Route::get('registerStudy', [addStudyPlaceController::class, 'registerStudy'])->name('registerStudy');
+Route::post('registerStudy', [addStudyPlaceController::class, 'registerStudy']);
 require __DIR__.'/auth.php';
