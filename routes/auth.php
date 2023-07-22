@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -60,4 +61,27 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+
+});
+Route::name('user.')->group(function (){
+
+    Route::view('/private', 'private')->middleware('auth')->name('private');
+
+    Route::get('/login', function (){
+       if (Auth::check()){
+           return redirect('user.private');
+       }
+       return view('loginPlace');
+    })->name('loginPlace');
+
+    //Route::post('/login', [] )
+    //Route::get('/logout')->name('logout');
+
+    Route::get('/registration', function (){
+        if (Auth::check()){
+            return redirect('user.private');
+        }
+        return View('registration');
+    })->name('/registration');
 });

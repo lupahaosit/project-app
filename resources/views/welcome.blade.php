@@ -6,8 +6,8 @@
 
         <title>Laravel</title>
         <div>
-            @if (Route::has('AddStudy'))
-           <a href="{{route('AddStudy')}}" >hello world</a>
+            @if (Route::has('getAll'))
+           <a href="{{route('getAll')}}" >hello world</a>
             @else
                 <a href="{{route('login')}}">hello not world</a>
 

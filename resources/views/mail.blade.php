@@ -1,5 +1,7 @@
-<p>Тестовое письмо!</p>
+<p>Тестовое письмо! {{$data}}</p>
 <div>
-    hello world
+    <?php
+    $contact = DB::table('users')->get();
+    ?>
 
 </div>

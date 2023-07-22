@@ -32,11 +32,11 @@ Route::middleware('auth')->group(function () {
 Route::get('message', [UserController::class, 'getPage'])->name('message');
 Route::post('message', [UserController::class, 'getPage']);
 
-Route::get('Create', [UserController::class, 'create'])->name('Create');
-Route::post('Create', [UserController::class, 'create']);
+//Route::get('Create', [UserController::class, 'create'])->name('Create');
+//Route::post('Create', [UserController::class, 'create']);
 
-Route::get('Create', [UserController::class, 'create'])->name('Create');
-Route::post('Create', [UserController::class, 'create']);
+Route::get('getAll', [UserController::class, 'getAll'])->name('getAll');
+Route::post('getAll', [UserController::class, 'getAll']);
 
 
 

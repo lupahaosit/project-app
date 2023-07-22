@@ -17,11 +17,12 @@ class UserController extends Controller
 {
     public function getAll() : \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
     {
+        $x = 5;
+            (Mail::send(['html'=>'mail', 'subject'=>'hello world'], ['data'=>$x], function ($message) use($x){
+                $message->to('igor2002vlad@mail.ru', 'To web dev blog')->subject('Test Email');
 
-            Mail::send(['text'=>'mail'], ['name'=>'Web dev blog'], function ($message){
-                $message->to('igor2002vlad@mail.ru', 'To web dev blog')->subject('Test email');
                 $message->from('igor2002vld@gmail.com', 'To web dev blog');
-            });
+            }));
 
         $contact = DB::table('users')->get();
 
